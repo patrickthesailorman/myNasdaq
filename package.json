@@ -4,7 +4,8 @@
   "description": "NASDAQ  MEAN stack application",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node app.js",
+    "test": "echo \"Error: No test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/patrickthesailorman/myNasdaq/issues"
   },
-  "homepage": "https://github.com/patrickthesailorman/myNasdaq#readme"
+  "homepage": "https://github.com/patrickthesailorman/myNasdaq#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.1"
+  }
 }
