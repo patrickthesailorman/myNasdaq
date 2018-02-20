@@ -1,0 +1,22 @@
+{
+  "name": "my_nasdaq_app",
+  "version": "1.0.0",
+  "description": "NASDAQ  MEAN stack application",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickthesailorman/myNasdaq.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Patrick C. McCarty",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patrickthesailorman/myNasdaq/issues"
+  },
+  "homepage": "https://github.com/patrickthesailorman/myNasdaq#readme"
+}
