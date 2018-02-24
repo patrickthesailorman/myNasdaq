@@ -9,7 +9,11 @@ router
  
  router
     .route('/companies/:companyId')
-    .get(ctrlCompanies.companiesGetOne);       
+    .get(ctrlCompanies.companiesGetOne);
+    
+router
+    .route('/companies/new')
+    .get(ctrlCompanies.companiesAddOne); 
 
     
 module.exports = router;
