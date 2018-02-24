@@ -6,3 +6,12 @@ module.exports.companiesGetAll = function(req, res) {
     .status(200)
     .send(companyData);
 };
+
+module.exports.companiesGetOne= function(req, res) {
+    var companyId = req.params.companyId;
+    var thisCompany = companyData[companyId];
+    console.log("GET the company ID", companyId);
+    res
+    .status(200)
+    .send(thisCompany);
+};
