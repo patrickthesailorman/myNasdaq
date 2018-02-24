@@ -30,3 +30,11 @@ module.exports.companiesGetOne= function(req, res) {
     .status(200)
     .send(thisCompany);
 };
+
+module.exports.companiesAddOne = function(req, res) {
+    console.log("POST new company");
+    console.log(req.body);
+    res
+    .status(200)
+    .json(req.body);
+};
