@@ -4,7 +4,14 @@ var dburl = 'mongodb://' + process.env.IP + ':27017/myNasdaq'
 var _connection = null;
 
 var open = function() {
-    // Set connection
+   MongoClient.connect(dburl, function(err, db) {
+      if (err) {
+          console.log("Db connection failed");
+          return;
+      } 
+      _connection = db;
+      console.log("DB connection open", db);
+   });
 };
 
 var get = function() {
