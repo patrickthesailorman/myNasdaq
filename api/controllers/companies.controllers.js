@@ -65,7 +65,28 @@ module.exports.companiesGetOne= function(req, res) {
 };
 
 module.exports.companiesAddOne = function(req, res) {
+    var db = dbconn.get();
+    var collection = db.collection('companies');
+    var newCompany;
+    
     console.log("POST new company");
+    
+    if (req.body && req.body.name && req.body.symbol) {
+        newCompany = req.body;
+        
+        collection.insertOne(newCompany, function(err, response) {
+            console.log(response);
+            console.log(response.ops);
+            res
+              .status(201)
+              .json(response.ops);
+        });
+    } else {
+        console.log("Data missing from body");
+        res
+        .status(400)
+        .json({message : "Required data missing from boody"});
+    }
     console.log(req.body);
     res
     .status(200)
