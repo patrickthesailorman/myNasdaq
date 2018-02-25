@@ -1,14 +1,21 @@
 var dbconn = require('../data/dbconnection.js');
-var ObjectId = require('mongodb').ObjectId;
+var ObjectId = require('mongodb').ObjectID;
+
 var companyData = require('../data/company-list.json');
 
 module.exports.companiesGetAll = function(req, res) {
     
     var db = dbconn.get();
-    var collection = db.collection('companies');
+    
+        // console.log("db", db);
+    
+    console.log("GET the companies");
+    console.log(req.query);
     
     var offset = 0;
     var count = 5;
+    
+    var collection = db.collection('companies');
     
     if (req.query && req.query.offset) {
         offset = parseInt(req.query.offset, 10);
@@ -19,37 +26,22 @@ module.exports.companiesGetAll = function(req, res) {
     }
     
     collection
-      .find
+      .find()
       .skip(offset)
       .limit(count)
       .toArray(function(err, docs) {
-        console.log("Found companies", docs);
+        console.log("Found companies", docs.length);
         res
           .status(200)
           .json(docs); 
     });
     
-
-    
-    // console.log("db", db);
-    
-    // console.log("GET the companies");
-    // console.log(req.query);
-    
-
-    
-    // var returnData = companyData.slice(offset, offset + count);
-    
-    // res
-    // .status(200)
-    // .send(returnData);
 };
 
 module.exports.companiesGetOne= function(req, res) {
     var db = dbconn.get();
-    var collection = db.collection('companies');
-    
     var companyId = req.params.companyId;
+    var collection = db.collection('companies');
     console.log("GET the company ID", companyId);
     
     collection
@@ -59,24 +51,22 @@ module.exports.companiesGetOne= function(req, res) {
          res
             .status(200)
             .json(doc);
-      })
-    
+      });
     
 };
 
 module.exports.companiesAddOne = function(req, res) {
+    console.log("POST new company");
     var db = dbconn.get();
     var collection = db.collection('companies');
     var newCompany;
-    
-    console.log("POST new company");
-    
+   
     if (req.body && req.body.name && req.body.symbol) {
         newCompany = req.body;
-        
+      
         collection.insertOne(newCompany, function(err, response) {
-            console.log(response);
-            console.log(response.ops);
+            console.log("Company Added", response);
+            console.log("Company Added", response.ops);
             res
               .status(201)
               .json(response.ops);
@@ -87,8 +77,5 @@ module.exports.companiesAddOne = function(req, res) {
         .status(400)
         .json({message : "Required data missing from boody"});
     }
-    console.log(req.body);
-    res
-    .status(200)
-    .json(req.body);
+    
 };
