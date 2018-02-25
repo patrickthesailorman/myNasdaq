@@ -1,8 +1,11 @@
+var dbconn = require('../data/dbconnection.js');
+var ObjectId = require('mongodb').ObjectId;
 var companyData = require('../data/company-list.json');
 
 module.exports.companiesGetAll = function(req, res) {
-    console.log("GET the companies");
-    console.log(req.query);
+    
+    var db = dbconn.get();
+    var collection = db.collection('companies');
     
     var offset = 0;
     var count = 5;
@@ -15,20 +18,50 @@ module.exports.companiesGetAll = function(req, res) {
         count = parseInt(req.query.count, 10);
     }
     
-    var returnData = companyData.slice(offset, offset + count);
+    collection
+      .find
+      .skip(offset)
+      .limit(count)
+      .toArray(function(err, docs) {
+        console.log("Found companies", docs);
+        res
+          .status(200)
+          .json(docs); 
+    });
     
-    res
-    .status(200)
-    .send(returnData);
+
+    
+    // console.log("db", db);
+    
+    // console.log("GET the companies");
+    // console.log(req.query);
+    
+
+    
+    // var returnData = companyData.slice(offset, offset + count);
+    
+    // res
+    // .status(200)
+    // .send(returnData);
 };
 
 module.exports.companiesGetOne= function(req, res) {
+    var db = dbconn.get();
+    var collection = db.collection('companies');
+    
     var companyId = req.params.companyId;
-    var thisCompany = companyData[companyId];
     console.log("GET the company ID", companyId);
-    res
-    .status(200)
-    .send(thisCompany);
+    
+    collection
+      .findOne({
+          _id : ObjectId(companyId)
+      }, function(err, doc) {
+         res
+            .status(200)
+            .json(doc);
+      })
+    
+    
 };
 
 module.exports.companiesAddOne = function(req, res) {
