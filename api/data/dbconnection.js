@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-var dburl = 'mongodb://' + process.env.IP + ':27017/myNasdaq'
+var dburl = 'mongodb://' + process.env.IP + ':27017/myNasdaq';
 
 var _connection = null;
 
