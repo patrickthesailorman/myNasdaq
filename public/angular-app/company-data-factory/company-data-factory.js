@@ -4,7 +4,7 @@ function companyDataFactory($http) {
   return {
     companyList: companyList,
     companyDisplay: companyDisplay,
-    postOrder: postOrder
+    // postOrder: postOrder
   };
 
   function companyList() {
@@ -15,9 +15,9 @@ function companyDataFactory($http) {
     return $http.get('/api/companies/' + id).then(complete).catch(failed);
   }
 
-  function postOrder(id, review) {
-    return $http.post('/api/companies/' + id + '/orders', order).then(complete).catch(failed);
-  }
+  // function postOrder(id, order) {
+  //   return $http.post('/api/companies/' + id + '/orders', order).then(complete).catch(failed);
+  // }
 
   function complete(response) {
     return response;

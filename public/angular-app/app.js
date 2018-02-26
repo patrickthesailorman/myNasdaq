@@ -1,11 +1,9 @@
-angular.module('myNasdaq', ['ngRoute'])
-.config(config)
-.controller('CompaniesControllers', CompaniesController);
+angular.module('myNasdaq', ['ngRoute']).config(config);
 
 function config($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: 'angular-app/companies.html',
+        templateUrl: 'angular-app/companies-list/companies.html',
         controller: CompaniesController,
         controllerAs: 'vm'
     })
@@ -16,7 +14,7 @@ function config($routeProvider) {
     });
 }
 
-function CompaniesController() {
-    var vm = this;
-    vm.title = 'MyNASDAQ';
-}
+// function CompaniesController() {
+//     var vm = this;
+//     vm.title = 'MyNASDAQ';
+// }
