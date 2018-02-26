@@ -8,6 +8,11 @@ function config($routeProvider) {
         templateUrl: 'angular-app/companies.html',
         controller: CompaniesController,
         controllerAs: 'vm'
+    })
+    .when('/company/:id', {
+        templateUrl: 'angular-app/company-display/company.html',
+        controller: CompanyController,
+        controllerAs: 'vm'
     });
 }
 
