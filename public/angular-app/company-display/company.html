@@ -1,0 +1,37 @@
+<h1>{{ vm.company.name }}</h1>
+<h2>{{vm.company.symbol}}</h2>
+
+<p><large>{{ vm.company.LastSale }}</large></p>
+
+<p>{{ vm.company.MarketCap }}</p>
+<p>{{ vm.company.ADRTSO }}</p>
+<p>{{ vm.company.IPOyear }}</p>
+<p>{{ vm.company.Sector }}</p>
+<p>{{ vm.company.Industry }}</p>
+<p>{{ vm.company.SummaryQuote }}</p>
+<p>{{ vm.company.FIELD10 }}</p>
+
+<h3>Orders</h3>
+<ul>
+  <li ng-repeat="order in vm.company.orders"> <strong>{{ order.orderType }} executed:</strong> {{ order.orderTimestamp }}</li>
+</ul>
+
+<form name="vm.orderForm" ng-submit="vm.addOrder()">
+  Shares: <input type="number" name="shares" required ng-minlength="2" ng-model="vm.shares">
+  <div ng-show="vm.orderForm.name.$dirty && vm.orderForm.name.$invalid && vm.isSubmitted">
+    <p>Shares should be more than 10</p>
+  </div>
+
+  Price: <input type="number" name="price" required ng-pattern="/^[1-5000]$/" ng-model="vm.price">
+  <div ng-show="vm.orderForm.rating.$dirty && vm.orderForm.rating.$invalid && vm.isSubmitted">
+    <p>Price must be between 1-5000.</p>
+
+  </div>
+
+  Order Type: <textarea name="orderType" required ng-model="vm.orderType"></textarea>
+  <div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
+    <p>Please request Market or Limit order</p>
+  </div>
+
+  <button type="submit" class="btn">Execute Order</button>
+</form>
