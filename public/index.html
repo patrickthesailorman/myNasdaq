@@ -9,10 +9,11 @@
     <link href="css/custom.css" rel="stylesheet"/>
 </head>
 <body>
+    <mh-navigation></mh-navigation>
+  <div class="container">
     <h1>myNasdaq</h1>
-    
     <div ng-view></div>
-    
+    </div>
     <footer class="footer">
       <div class="container-fluid">
         <p class="text-muted text-center">
@@ -30,6 +31,11 @@
     <script src="angular-app/company-display/company-display-controller.js"></script>
     <script src="angular-app/company-data-factory/company-data-factory.js"></script>
     <script src="angular-app/company-list/company-list-controller.js"></script>
-    <script src="angular-app/company-order/company-order-directive.js"></script>
+    <!--<script src="angular-app/company-order/company-order-directive.js"></script>-->
+    <script src="angular-app/register/register-controller.js"></script>
+    <script src="angular-app/navigation-directive/navigation-directive.js"></script>
+    <script src="angular-app/login/login-controller.js"></script>
+    <script src="angular-app/auth/auth-factory.js"></script>
+    <script src="angular-app/auth/auth-interceptor.js"></script>
 </body>
 </html>
