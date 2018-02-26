@@ -8,7 +8,7 @@ function CompanyController($route, $routeParams, companyDataFactory) {
     vm.company = response.data;
     // vm.symbol = _getSymbol(response.data.symbol);
   });
-
+}
 //   function _getSymbol(symbol) {
 //     return new Array(symbol);
 //   }
