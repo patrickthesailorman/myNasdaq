@@ -8,7 +8,7 @@ function CompanyController($route, $routeParams, $window, companyDataFactory, Au
     vm.company = response.data;
     // vm.symbol = _getSymbol(response.data.symbol);
   });
-}
+
 //   function _getSymbol(symbol) {
 //     return new Array(symbol);
 //   }
@@ -22,6 +22,7 @@ function CompanyController($route, $routeParams, $window, companyDataFactory, Au
     }
   };
   
+}
 //   vm.addOrder = function() {
 //     var postData = {
 //       shares: vm.shares,
