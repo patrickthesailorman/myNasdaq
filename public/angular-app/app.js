@@ -11,7 +11,7 @@ function config($httpProvider, $routeProvider) {
         }
     })
     .when('/companies', {
-        templateUrl: 'angular-app/companies-list/companies.html',
+        templateUrl: 'angular-app/company-list/companies.html',
         controller: CompaniesController,
         controllerAs: 'vm',
         access: {
