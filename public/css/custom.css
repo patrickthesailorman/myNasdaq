@@ -6,11 +6,12 @@ html {
 body {
     /* margin-bottom by footer height */
     margin-bottom: 90px;
+    margin-top: 50px;
 }
 
-/*.padded {*/
-/*    padding-top: 30px;*/
-/*}*/
+.padded {
+    padding-top: 30px;
+}
 
 .footer {
     position: absolute;
