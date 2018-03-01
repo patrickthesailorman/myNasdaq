@@ -1,5 +1,17 @@
 <h1>myNASDAQ</h1>
 
+<!--<div ng-if="vm.isLoggedIn()">-->
+<form name="vm.stockForm" ng-submit="vm.companiesGetOne()">
+  Stock Quote: <input type="string" name="quote" required ng-pattern="/^[1-5]$/" ng-model="vm.company">
+  <div ng-show="vm.stockForm.quote.$dirty && vm.stockForm.quote.$invalid && vm.isSubmitted">
+    <p>Stock Symbol must be captialized.</p>
+
+  </div>
+
+  <button type="submit" class="btn">Get Stock Quote</button>
+</form>
+<!--</div>-->
+
 <div class="container" id="adSpace">
     <p> Your ad here </p>
     <p> 1-800-Ad-SPACE</p>
