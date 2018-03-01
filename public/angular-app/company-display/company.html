@@ -1,15 +1,20 @@
 <h1>{{ vm.company.Name }}</h1>
-<h2>{{vm.company.Symbol}}</h2>
+<h2>Symbol: {{vm.company.Symbol}} </h2>
+<h3>Last Sale: {{ vm.company.LastSale }}</h3>
 
-<p><large>{{ vm.company.LastSale }}</large></p>
+<p><large></large></p>
 
-<p>{{ vm.company.MarketCap }}</p>
+<p>market cap: {{ vm.company.MarketCap }}</p>
 <p>{{ vm.company.ADRTSO }}</p>
-<p>{{ vm.company.IPOyear }}</p>
-<p>{{ vm.company.Sector }}</p>
-<p>{{ vm.company.Industry }}</p>
-<p>{{ vm.company.SummaryQuote }}</p>
+<p>IPO year: {{ vm.company.IPOyear }}</p>
+<p>Sector: {{ vm.company.Sector }}</p>
+<p>Industry: {{ vm.company.Industry }}</p>
+<p>Link: {{ vm.company.SummaryQuote }}</p>
 <p>{{ vm.company.FIELD10 }}</p>
+
+<button type="submit" class="btn">Buy Stock</button> 
+
+<button type="submit" class="btn">Sell Stock</button>
 
 <!--<h3>Orders</h3>-->
 <!--<ul>-->

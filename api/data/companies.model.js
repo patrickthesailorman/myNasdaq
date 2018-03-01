@@ -11,11 +11,11 @@ var companySchema = new mongoose.Schema({
     },
     "LastSale" : String,
     "MarketCap" : Number,
-    "ADR TSO" : String,
+    "ADRTSO" : String,
     "IPOyear" : String,
     "Sector" : String,
     "Industry" : String,
-    "Summary Quote" : String,
+    "SummaryQuote" : String,
     "FIELD10" : String
 });
 
