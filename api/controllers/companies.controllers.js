@@ -15,7 +15,7 @@ module.exports.companiesGetAll = function(req, res) {
     }
     
      if (req.query && req.query.count) {
-        count = parseInt(req.query.count, 10);
+        count = parseInt(req.query.count, 20);
     }
     
     if (isNaN(offset) || isNaN(count)) {
