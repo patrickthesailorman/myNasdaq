@@ -1,11 +1,15 @@
 <h1>{{vm.title}}</h1>
+<h4>Stock Symbol - Company Name - Last Price</h4>
 
 <div class="logo">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYr6GbFNvCqJPPIFaP9uDyxgd_jIfmP-RaBYEksvNEGzbbYaPu" height="350" alt="Bull Market"/>
 </div>
 
 <ul>
-  <li dir-paginate="company in vm.companies | itemsPerPage: 50"><a ng-href="#!/company/{{ company._id }}">{{ company.Symbol }} - {{ company.Name }} - {{ company.LastSale }}</a></li>
+  <li dir-paginate="company in vm.companies | itemsPerPage: 20"><a ng-href="#!/company/{{ company._id }}">{{ company.Symbol }} - {{ company.Name }} - {{ company.LastSale }}</a></li>
 </ul>
 
-<dir-pagination-controls></dir-pagination-controls>
+<dir-pagination-controls
+    max-size= "12" 
+    boundary-links= "true" >
+</dir-pagination-controls>
