@@ -9,7 +9,7 @@
 <p>IPO year: {{ vm.company.IPOyear }}</p>
 <p>Sector: {{ vm.company.Sector }}</p>
 <p>Industry: {{ vm.company.Industry }}</p>
-<p>Click symbol for Link to more info: <a href="https://www.nasdaq.com/symbol/{{ vm.company.Symbol }}" target="_blank">{{ vm.company.Symbol }}</a></p>
+<p>Click symbol for Link to more info: <a href="{{ vm.company['Summary Quote'] }}" target="_blank">{{ vm.company.Symbol }}</a></p>
 <p>{{ vm.company.FIELD10 }}</p>
 
 <button type="submit" class="btn">Buy Stock</button> 
@@ -40,3 +40,4 @@
 
 <!--  <button type="submit" class="btn">Execute Order</button>-->
 <!--</form>-->
+

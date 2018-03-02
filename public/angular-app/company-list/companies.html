@@ -1,7 +1,7 @@
 <h1>{{vm.title}}</h1>
 
 <ul>
-  <li ng-repeat="company in vm.companies"><a ng-href="#!/company/{{ company._id }}">{{ company.Symbol }} - {{ company.Name }} - {{ company.LastSale }}</a></li>
+  <li dir-paginate="company in vm.companies | itemsPerPage: 20"><a ng-href="#!/company/{{ company._id }}">{{ company.Symbol }} - {{ company.Name }} - {{ company.LastSale }}</a></li>
 </ul>
 
-<button class="btn"> Next 20</button>
+<dir-pagination-controls></dir-pagination-controls>
