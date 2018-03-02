@@ -2,9 +2,9 @@
 
 <!--<div ng-if="vm.isLoggedIn()">-->
 <form name="vm.stockForm" ng-submit="vm.companiesGetOne()">
-  Stock Quote: <input type="string" name="quote" required ng-pattern="/^[1-5]$/" ng-model="vm.company">
+  Stock Quote: <input type="string" name="quote" required ng-pattern="/^\U/" ng-model="vm.company">
   <div ng-show="vm.stockForm.quote.$dirty && vm.stockForm.quote.$invalid && vm.isSubmitted">
-    <p>Stock Symbol must be captialized.</p>
+    <p>Stock Symbol must be capitalized.</p>
 
   </div>
 
