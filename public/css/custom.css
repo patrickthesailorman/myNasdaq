@@ -30,3 +30,6 @@ body {
 .btn {
     background-color: #3a9a3a;
 }
+.logo {
+    float: right;
+}

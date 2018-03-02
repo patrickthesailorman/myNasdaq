@@ -7,7 +7,7 @@ module.exports.companiesGetAll = function(req, res) {
     console.log(req.query);
     
     var offset = 0;
-    var count = 5;
+    var count = 0;
     var maxCount = 50;
     
     if (req.query && req.query.offset) {

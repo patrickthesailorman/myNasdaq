@@ -8,7 +8,7 @@ function companyDataFactory($http) {
   };
 
   function companyList() {
-    return $http.get('/api/companies?count=20').then(complete).catch(failed);
+    return $http.get('/api/companies').then(complete).catch(failed);
   }
 
   function companyDisplay(id) {
