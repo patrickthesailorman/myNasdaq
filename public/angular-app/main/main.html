@@ -1,16 +1,24 @@
 <h1>myNASDAQ</h1>
 
-<!--<div ng-if="vm.isLoggedIn()">-->
-<form name="vm.stockForm" ng-submit="vm.companiesGetOne()">
-  Stock Quote: <input type="string" name="quote" required ng-pattern="/^\U/" ng-model="vm.company">
-  <div ng-show="vm.stockForm.quote.$dirty && vm.stockForm.quote.$invalid && vm.isSubmitted">
-    <p>Stock Symbol must be capitalized.</p>
+<div ng-if="vm.isLoggedIn()">
+<p> Hello, {{ vm.loggedInUser }}</p>
+</div>
 
-  </div>
-
-  <button type="submit" class="btn">Get Stock Quote</button>
-</form>
-<!--</div>-->
+<div>
+  <form name="vm.stockForm" ng-submit="vm.companiesGetOne()">
+   
+    Search for Company by Stock Symbol: <input type="text" class="search" name="stockQuote" required ng-pattern="/^\U/" ng-model="searchSymbols" ng-change="change(text)" placeholder="Stock Symbol">
+    <div ng-show="vm.stockForm.quote.$dirty && vm.stockForm.quote.$invalid && vm.isSubmitted">
+      <p>Stock Symbol must be capitalized.</p>
+      </div>
+      <ul>
+        <li ng-repeat="Symbol in Symbols | filter: searchSymbols"> {{vm.companies.Symbols}}</li>
+        <span class="Symbol"><a href="{{company.name}} {{vm.symbol}}">{{company.Symbol}}</a></span>
+      </ul>
+      
+    <button type="submit" class="btn">Get Stock Quote</button>
+  </form>
+</div>
 
 <div class="container" id="adSpace">
     <p> Your ad here </p>

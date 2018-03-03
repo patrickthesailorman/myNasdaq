@@ -6,7 +6,7 @@ function CompanyController($route, $routeParams, $window, companyDataFactory, Au
   vm.isSubmitted = false;
   companyDataFactory.companyDisplay(id).then(function(response) {
     vm.company = response.data;
-    // vm.symbol = _getSymbol(response.data.symbol);
+    vm.symbol = _getSymbol(response.data.symbol);
   });
 
 //   function _getSymbol(symbol) {
