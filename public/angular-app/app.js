@@ -40,6 +40,12 @@ function config($httpProvider, $routeProvider) {
         restricted: true
       }
     })
+    .when('/symbol', {
+        templateUrl: 'angular-app/main/main.html',
+        access: {
+        restricted: false
+      }
+    })
     .otherwise({
       redirectTo: '/'
     });

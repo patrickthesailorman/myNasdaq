@@ -4,20 +4,25 @@
 <p> Hello, {{ vm.loggedInUser }}</p>
 </div>
 
-<div>
-  <form name="vm.stockForm" ng-submit="vm.companiesGetOne()">
-   
-    Search for Company by Stock Symbol: <input type="text" class="search" name="stockQuote" required ng-pattern="/^\U/" ng-model="searchSymbols" ng-change="change(text)" placeholder="Stock Symbol">
-    <div ng-show="vm.stockForm.quote.$dirty && vm.stockForm.quote.$invalid && vm.isSubmitted">
-      <p>Stock Symbol must be capitalized.</p>
-      </div>
-      <ul>
-        <li ng-repeat="Symbol in Symbols | filter: searchSymbols"> {{vm.companies.Symbols}}</li>
-        <span class="Symbol"><a href="{{company.name}} {{vm.symbol}}">{{company.Symbol}}</a></span>
-      </ul>
-      
-    <button type="submit" class="btn">Get Stock Quote</button>
-  </form>
+<div class="container-fluid" ng-controller="TypeaheadCtrl">
+  <div class="form-group">
+    <form name="vm.stockForm" ng-submit="vm.companiesGetOne()">
+     
+       <label for="Symbols">Search for Company by Stock Symbol:</label>
+          <input type="text" name="symbol" required ng-pattern="/^\U/" ng-model="Symbol" typeahead="Symbol for Symbol in Symbols | filter:$viewValue | limitTo:8" class="form-control" placeholder="Stock Symbol">
+      <div ng-show="vm.stockForm.quote.$dirty && vm.stockForm.quote.$invalid && vm.isSubmitted">
+        <p>Stock Symbol must be capitalized.</p>
+        </div>
+        <ul>
+          <li dir-paginate="item in collection | filter: Symbol | itemsPerPage: 10">...</li>
+          <!--<li ng-repeat="Symbol for Symbol in Symbols | filter: search"> {{vm.companies.Symbols}}</li>-->
+          <span class="Symbol"><a href="{{company.name}} {{vm.symbol}}">{{vm.company.Symbol}}</a></span>
+        </ul>
+        </div>
+        
+      <button type="submit" class="btn btn-success">Get Stock Quote</button>
+    </form>
+  </div>
 </div>
 
 <div class="container" id="adSpace">
