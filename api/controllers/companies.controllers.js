@@ -59,7 +59,7 @@ module.exports.companiesGetAll = function(req, res) {
 
 module.exports.companiesGetOne= function(req, res) {
     var id = req.params.companyId;
-
+  
     console.log("GET the company ID", id);
     
 Company
@@ -192,12 +192,12 @@ module.exports.companiesDeleteOne = function(req, res) {
 
 module.exports.companiesGetOneSymbol= function(req, res) {
    console.log("companiesGetOneSymbol");
-    var Symbol = req.params.Symbol;
+    var symbol = req.params.symbol;
 
-    console.log("GET the company Symbol ", Symbol );
+    console.log("GET the company Symbol ", symbol );
     
 Company
-    .findOne({"Symbol" : Symbol})
+    .findOne({"Symbol" : symbol})
     .exec(function(err, doc) {
         var response = {
           status : 200,

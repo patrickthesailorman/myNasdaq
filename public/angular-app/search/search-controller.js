@@ -5,10 +5,11 @@ function symbolSearchController($http, $route, $routeParams, companyDataFactory)
     
     vm.stocksGetOne = function() {
         console.log("vm", vm);
-        var symbol = vm.symbol;
+        var symbol = vm.symbol.toUpperCase();
         console.log(symbol);
         companyDataFactory.symbolDisplay(symbol);
-        console.log(Symbol, vm.symbol);
+        console.log(symbol, vm.symbol);
+        companyDataFactory.companyDisplay(symbol);
     }
 };
 // app.controller('symbolSearchCtrl',function($scope,$http){
