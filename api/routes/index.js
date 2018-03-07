@@ -25,4 +25,8 @@ router
     .route('/users/login')
     .post(ctrlUsers.login);
     
+router
+  .route('/companies/symbol/:symbol')
+  .get(ctrlCompanies.companiesGetOneSymbol);
+  
 module.exports = router;

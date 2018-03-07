@@ -6,6 +6,8 @@ function config($httpProvider, $routeProvider) {
     $routeProvider
     .when('/', {
         templateUrl: 'angular-app/main/main.html',
+        controller: symbolSearchController,
+        controllerAs: 'vm',
         access: {
             restricted: false
         }
@@ -38,12 +40,6 @@ function config($httpProvider, $routeProvider) {
         templateUrl: 'angular-app/profile/profile.html',
         access: {
         restricted: true
-      }
-    })
-    .when('/symbol', {
-        templateUrl: 'angular-app/main/main.html',
-        access: {
-        restricted: false
       }
     })
     .otherwise({

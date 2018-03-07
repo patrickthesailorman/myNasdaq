@@ -189,3 +189,33 @@ module.exports.companiesDeleteOne = function(req, res) {
       }
     });
 };
+
+module.exports.companiesGetOneSymbol= function(req, res) {
+   console.log("companiesGetOneSymbol");
+    var Symbol = req.params.Symbol;
+
+    console.log("GET the company Symbol ", Symbol );
+    
+Company
+    .findOne({"Symbol" : Symbol})
+    .exec(function(err, doc) {
+        var response = {
+          status : 200,
+          message : doc
+      };
+      if (err) {
+          console.log("Error finding Symbol");
+          response.status = 500;
+          response.message = err;
+      } else if(!doc) {
+          console.log("Symbol not found in database", Symbol);
+          response.status = 404;
+          response.message = {
+              "message" : "Symbol not found" + Symbol 
+          };
+      }
+      res
+      .status(response.status)
+      .json(response.message);
+    });
+};

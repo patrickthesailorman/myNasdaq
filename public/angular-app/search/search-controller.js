@@ -1,19 +1,16 @@
-angular.module('myNasdaq').controller('SearchController', SearchController);
-angular.module("angularTypeahead", ["ui.bootstrap"]);
+angular.module('myNasdaq').controller('symbolSearchController', symbolSearchController);
 
-myNasdaq.factory("Symbols", function(){
-    var Symbols = db.find(companies.Symbols);
-    return Symbols;
-});
-
-myNasdaq.controller("TypeaheadCtrl", function($scope, Symbol) {
-	
-	$scope.selected = undefined;
-	
-	$scope.symbol = company.Symbol;
-	
-});
-
+function symbolSearchController($http, $route, $routeParams, companyDataFactory) {
+    var vm = this;
+    
+    vm.stocksGetOne = function() {
+        console.log("vm", vm);
+        var symbol = vm.symbol;
+        console.log(symbol);
+        companyDataFactory.symbolDisplay(symbol);
+        console.log(Symbol, vm.symbol);
+    }
+};
 // app.controller('symbolSearchCtrl',function($scope,$http){
 //     $http.get('../api/data/company-list.json').success(function(data, status, headers, config) {
 //         $scope.items = data.data;
@@ -37,13 +34,14 @@ myNasdaq.controller("TypeaheadCtrl", function($scope, Symbol) {
 //         return result;
 //     };
 // });
-App.controller('MainController', function($scope, $http, $timeout) {
-    var valtosend;
-    $scope.searchSymbols = null;
-    $scope.change = function(text) {
-        valtosend = $scope.searchSymbols;
-        $http.get('../api/data/company-list.json' + valtosend).then(function(result){
-            $scope.entries = result.data;
-        });
-        };
-    });
+// App.controller('symbolSearchController', function($scope, $http, $timeout) {
+//     var valtosend;
+//     $scope.searchSymbols = null;
+//     $scope.change = function(text) {
+//         valtosend = $scope.searchSymbols;
+//         $http.get('../api/data/company-list.json' + valtosend).then(function(result){
+//             $scope.entries = result.data;
+//         });
+//         };
+//     });
+    
