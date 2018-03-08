@@ -201,6 +201,7 @@ module.exports.companiesGetOneSymbol= function(req, res) {
 Company
     .findOne({"Symbol" : symbol})
     .exec(function(err, doc) {
+      console.log("show me", doc);
         var response = {
           status : 200,
           message : doc

@@ -1,15 +1,21 @@
 angular.module('myNasdaq').controller('symbolSearchController', symbolSearchController);
 
-function symbolSearchController($http, $route, $routeParams, companyDataFactory) {
+function symbolSearchController($http, $route, $routeParams, $location, companyDataFactory) {
     var vm = this;
     
     vm.stocksGetOne = function() {
         console.log("vm", vm);
         var symbol = vm.symbol.toUpperCase();
         console.log(symbol);
-        companyDataFactory.symbolDisplay(symbol);
+        companyDataFactory.symbolDisplay(symbol).then(function(res) {
+            console.log("show this", res);
+            var display =res.data;
+            $location.path("/company/" + display._id);
+            
+        });
         console.log(symbol, vm.symbol);
-        companyDataFactory.companyDisplay(symbol);
+        
+        // companyDataFactory.companyDisplay(symbol);
     }
 };
 // app.controller('symbolSearchCtrl',function($scope,$http){

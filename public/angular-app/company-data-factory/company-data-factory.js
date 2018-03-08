@@ -5,7 +5,6 @@ function companyDataFactory($http) {
     companyList: companyList,
     companyDisplay: companyDisplay,
     symbolDisplay: symbolDisplay
-    // postOrder: postOrder
   };
 
   function companyList() {
@@ -19,13 +18,6 @@ function companyDataFactory($http) {
   function symbolDisplay(symbol) {
     return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
   }
-  
-  // function companyShow(symbol) {
-  //   return $http.get('/api/companies/' + symbol).then(complete).catch(failed);
-  // }
-  // function postOrder(id, order) {
-  //   return $http.post('/api/companies/' + id + '/orders', order).then(complete).catch(failed);
-  // }
 
   function complete(response) {
     return response;
