@@ -6,6 +6,7 @@ function CompanyController($route, $routeParams, $window, companyDataFactory, Au
   vm.isSubmitted = false;
   companyDataFactory.companyDisplay(id).then(function(response) {
     console.log(id);
+    console.log(response.data);
     console.log(response);
     vm.company = response.data;
     
