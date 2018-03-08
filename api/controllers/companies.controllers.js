@@ -59,13 +59,11 @@ module.exports.companiesGetAll = function(req, res) {
 
 module.exports.companiesGetOne= function(req, res) {
     var id = req.params.companyId;
-    var symbol;
+   
     console.log("GET the company ID", id);
-    console.log("GET the company Symbol", symbol);
     
 Company
     .findById(id)
-    .findOne(symbol)
     .exec(function(err, doc) {
         var response = {
           status : 200,
