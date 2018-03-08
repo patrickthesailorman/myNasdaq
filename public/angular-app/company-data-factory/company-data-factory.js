@@ -20,9 +20,9 @@ function companyDataFactory($http) {
     return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
   }
   
-  function companyShow(symbol) {
-    return $http.get('/api/companies/' + symbol).then(complete).catch(failed);
-  }
+  // function companyShow(symbol) {
+  //   return $http.get('/api/companies/' + symbol).then(complete).catch(failed);
+  // }
   // function postOrder(id, order) {
   //   return $http.post('/api/companies/' + id + '/orders', order).then(complete).catch(failed);
   // }

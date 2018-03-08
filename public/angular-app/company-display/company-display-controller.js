@@ -10,12 +10,11 @@ function CompanyController($route, $routeParams, $window, companyDataFactory, Au
     console.log(response);
     vm.company = response.data;
     
-    vm.symbol = _getSymbol(response.data.symbol);
+    // vm.symbol = _getSymbol(response.data.symbol);
   });
 
-  function _getSymbol(symbol) {
-    return new Array(symbol);
-  }
+  //   return new Array(symbol);
+  // }
 
 
   vm.isLoggedIn = function() {
