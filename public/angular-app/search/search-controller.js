@@ -13,6 +13,9 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
         console.log(symbol, vm.symbol);
       
     }
+    vm.queryHistory = function() {
+        console.log("query");
+    }
 };
 
     
