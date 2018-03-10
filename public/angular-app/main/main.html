@@ -14,6 +14,8 @@
       <!--  <p>Stock Symbol must be capitalized.</p>-->
       <!--  </div>-->
       <button type="submit" class="btn btn-success">Get Stock Quote</button>
+      <br>
+      <label for="queries">Query List for Companies by Stock Symbol:</label>
         <ul>
           <li dir-paginate="item in collection | filter: Symbol | itemsPerPage: 10">...<a ng-href="#!/company/{{ company.Symbol }}">{{ company.Symbol }} - {{ company.Name }}</a></li>
           <!--<li ng-repeat="Symbol in vm.symbols | filter: search"> {{vm.companies.Symbols}}</li>-->
