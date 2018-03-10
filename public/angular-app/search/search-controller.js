@@ -1,6 +1,3 @@
-var mongoose = require('mongoose');
-var User = mongoose.model('User');
-
 angular.module('myNasdaq').controller('symbolSearchController', symbolSearchController);
 
 function symbolSearchController($http, $route, $routeParams, $location, companyDataFactory) {

@@ -79,7 +79,6 @@ module.exports.queriesGetOne = function(req, res) {
 var _addQuery = function (req, res, user) {
   user.queries.push({
     name : req.body.name,
-    rating : parseInt(req.body.rating, 10),
     query: req.body.query
   });
 

@@ -3,7 +3,7 @@ var router = express.Router();
 
 var ctrlCompanies = require('../controllers/companies.controllers.js'); 
 var ctrlUsers = require('../controllers/users.controllers.js');
-var ctrlQueries = require('../controllers/queries.controllers.js');
+var ctrlQueries = require('../controllers/queries.controller.js');
 
 // Company Routes
 router

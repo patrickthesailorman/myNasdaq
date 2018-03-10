@@ -1,21 +1,5 @@
 var mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    unique: true,
-    required: true
-  },
-  name: {
-    type: String
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  queries : [querySchema],
-});
-
 var querySchema = new mongoose.Schema({
   name : {
     type : String,
@@ -30,5 +14,23 @@ var querySchema = new mongoose.Schema({
     "default" : Date.now
   }
 });
+
+var userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  name: {
+    type: String
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  queries : [querySchema]
+});
+
+
 
 mongoose.model('User', userSchema);
