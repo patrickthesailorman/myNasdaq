@@ -32,8 +32,8 @@ router
   
 // Query List
 router
-  .route('/queries')
-  .get(ctrlQueries .queriesGetAll)
-  .post(ctrlQueries .queriesAddOne);
+  .route('/users/queries')
+  .get(ctrlQueries.queriesGetAll)
+  .post(ctrlQueries.queriesAddOne);
   
 module.exports = router;

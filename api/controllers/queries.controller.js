@@ -77,9 +77,11 @@ module.exports.queriesGetOne = function(req, res) {
 };
 
 var _addQuery = function (req, res, user) {
+  console.log("Query added");
   user.queries.push({
     name : req.body.name,
-    query: req.body.query
+    symbol: req.body.symbol,
+    createdOn: req.body.createdOn
   });
 
   user.save(function(err, userUpdated) {

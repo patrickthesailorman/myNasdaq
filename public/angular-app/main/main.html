@@ -6,7 +6,7 @@
 
 
 <div>
-    <form name="symbol" ng-submit="vm.stocksGetOne()">
+    <form name="symbol" ng-submit="vm.stocksGetOne(); _addQuery()">
      
        <label for="symbols">Search for Company by Stock Symbol:</label>
           <input type="text" name="symbol" ng-model="vm.symbol" placeholder="Stock Symbol">
@@ -14,14 +14,15 @@
       <!--  <p>Stock Symbol must be capitalized.</p>-->
       <!--  </div>-->
       <button type="submit" class="btn btn-success">Get Stock Quote</button>
-      <br>
-      <label for="queries">Query List for Companies by Stock Symbol:</label>
-        <ul>
-          <li dir-paginate="item in collection | filter: Symbol | itemsPerPage: 10">...<a ng-href="#!/company/{{ company.Symbol }}">{{ company.Symbol }} - {{ company.Name }}</a></li>
-          <!--<li ng-repeat="Symbol in vm.symbols | filter: search"> {{vm.companies.Symbols}}</li>-->
-        </ul>
     </form>
 </div> 
+      <br>
+      <label for="queries">Search History for Companies by Stock Symbol:</label>
+        <ul ng-model="vm.stockHistory">
+          <li dir-paginate="query in queries | filter: symbol | itemsPerPage: 10">...<a ng-href="#!/company/{{ company.Symbol }}">{{ company.Symbol }} - {{ company.Name }}</a></li>
+          <!--<li ng-repeat="Symbol in vm.symbols | filter: search"> {{vm.companies.Symbols}}</li>-->
+        </ul>
+
 
 <div class="container" id="adSpace">
     <p> Your ad here </p>
