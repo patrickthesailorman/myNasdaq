@@ -3,6 +3,7 @@ var router = express.Router();
 
 var ctrlCompanies = require('../controllers/companies.controllers.js'); 
 var ctrlUsers = require('../controllers/users.controllers.js');
+var ctrlQueries = require('../controllers/queries.controllers.js');
 
 // Company Routes
 router
@@ -32,7 +33,7 @@ router
 // Query List
 router
   .route('/queries')
-  .get(ctrlCompanies.queriesGetAll)
-  .post(ctrlCompanies.queriesAddOne);
+  .get(ctrlQueries .queriesGetAll)
+  .post(ctrlQueries .queriesAddOne);
   
 module.exports = router;

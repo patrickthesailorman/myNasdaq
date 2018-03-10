@@ -12,7 +12,8 @@ var userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  queries : [querySchema],
 });
 
 var querySchema = new mongoose.Schema({

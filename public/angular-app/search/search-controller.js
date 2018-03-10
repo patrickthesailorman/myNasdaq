@@ -1,3 +1,6 @@
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
+
 angular.module('myNasdaq').controller('symbolSearchController', symbolSearchController);
 
 function symbolSearchController($http, $route, $routeParams, $location, companyDataFactory) {
@@ -7,13 +10,13 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
         console.log("vm", vm);
         var symbol = vm.symbol.toUpperCase();
         companyDataFactory.symbolDisplay(symbol).then(function(res) {
-            var display =res.data;
+            var display = res.data;
             $location.path("/company/" + display._id);
         });
         console.log(symbol, vm.symbol);
       
     }
-    vm.queryHistory = function() {
+    vm.queriesGetAll = function() {
         console.log("query");
     }
 };
