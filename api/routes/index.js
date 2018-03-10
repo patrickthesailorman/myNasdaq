@@ -21,12 +21,18 @@ router
   .route('/users/register')
   .post(ctrlUsers.register);
 
-  router
+router
     .route('/users/login')
     .post(ctrlUsers.login);
-    
+// Symbol search
 router
   .route('/companies/symbol/:symbol')
   .get(ctrlCompanies.companiesGetOneSymbol);
+  
+// Query List
+router
+  .route('/queries')
+  .get(ctrlCompanies.queriesGetAll)
+  .post(ctrlCompanies.queriesAddOne);
   
 module.exports = router;
