@@ -5,7 +5,7 @@
   <link href="news/styles.css" rel="stylesheet">
 </head>
 <h1>myNASDAQ</h1>
-<div ng-controller="LoginController as vm">
+<div ng-controller="LoginController as vm" ng-init="vm.init()">
   <p ng-if="vm.isLoggedIn()"> Hello, {{ vm.loggedInUser }}</p>
 </div>
 

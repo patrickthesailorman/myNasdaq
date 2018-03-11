@@ -75,10 +75,10 @@ module.exports.queriesGetOne = function(req, res) {
 
 };
 
-module.exports._addQuery = function (req, res, user) {
+var _addQuery = function (req, res, user) {
   console.log("Query added");
   var stockHistory = [];
-  stockHistory.push(req.body.symbol);
+  stockHistory.push(res.body.symbol);
   user.queries.push({
     name : req.body.name,
     symbol: req.body.symbol,

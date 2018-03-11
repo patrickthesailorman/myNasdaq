@@ -12,7 +12,6 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
         })
         console.log(symbol, vm.symbol);
        companyDataFactory.stockHistory(symbol).then(function(res) {
-           vm.stockHistory.push(res.data.symbol);
            
        });
     }

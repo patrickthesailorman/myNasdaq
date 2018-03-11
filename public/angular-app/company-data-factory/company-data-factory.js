@@ -19,11 +19,15 @@ function companyDataFactory($http) {
   function symbolDisplay(symbol) {
     return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
   }
-  
+ 
   function stockHistory(symbol) {
-    return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
+    return $http.post('/api/users/queries/' + symbol).then(complete).catch(failed);
   }
 
+  function postUserQuery(user, symbol){
+        return $http.post('api/users/' + user + '/queries', symbol).then(complete).catch(failed);
+    }
+    
   function complete(response) {
     return response;
   }
