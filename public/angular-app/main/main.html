@@ -21,7 +21,7 @@
     </form>
 </div> 
       <br>
-  <!--<!--<div ng-controller="QueriesController as vm">   -->-->
+  <!--<!--<div ng-controller="QueriesController as vm">   -->
       <label for="queries">Search History for Companies by Stock Symbol:</label>
         <ul ng-model="vm.stockHistory">
           <li dir-paginate="symbol in symbols | filter: symbol | itemsPerPage: 10">...<a ng-href="#!/company/{{ company.Symbol }}">{{ company.Symbol }} - {{ company.Name }}</a></li>
@@ -29,34 +29,7 @@
         </ul>
   </div> 
 
-<div class="container" id="adSpace">
-    <p> Your ad here </p>
-    <p> 1-800-Ad-SPACE</p>
-</div>
-
-    <div class="container">
-        <h1> Get Top Headlines</h1>
-        <form id="source">
-            <p>Select a source</p>
-            <div class="form-group">
-                <select id="selection">
-                    
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            
-        </form>
-        <div id="news" class="container-fluid">
-            
-            </div>
-    </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="news/keys.js"></script>
-    <script src="news/index.js"></script>
-
-    <div class="container">
+    <div class="container" id="content">
         <h1> Get Top Headlines</h1>
         <form id="source">
             <p>Select a source</p>
