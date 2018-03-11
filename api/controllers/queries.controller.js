@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
-
 // GET all queries for a user
 module.exports.queriesGetAll = function(req, res) {
   var id = req.params.queryId;
@@ -76,8 +75,10 @@ module.exports.queriesGetOne = function(req, res) {
 
 };
 
-var _addQuery = function (req, res, user) {
+module.exports._addQuery = function (req, res, user) {
   console.log("Query added");
+  var stockHistory = [];
+  stockHistory.push(req.body.symbol);
   user.queries.push({
     name : req.body.name,
     symbol: req.body.symbol,

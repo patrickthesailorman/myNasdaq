@@ -1,9 +1,7 @@
 <h1>myNASDAQ</h1>
-
-<div ng-if="vm.isLoggedIn()">
-<p> Hello, {{ vm.loggedInUser }}</p>
+<div ng-controller="LoginController as vm">
+  <p ng-if="vm.isLoggedIn()"> Hello, {{ vm.loggedInUser }}</p>
 </div>
-
 
 <div>
     <form name="symbol" ng-submit="vm.stocksGetOne(); _addQuery()">
@@ -17,12 +15,13 @@
     </form>
 </div> 
       <br>
+  <div ng-controller="QueriesController as vm">   
       <label for="queries">Search History for Companies by Stock Symbol:</label>
         <ul ng-model="vm.stockHistory">
-          <li dir-paginate="query in queries | filter: symbol | itemsPerPage: 10">...<a ng-href="#!/company/{{ company.Symbol }}">{{ company.Symbol }} - {{ company.Name }}</a></li>
+          <li dir-paginate="symbol in symbols | filter: symbol | itemsPerPage: 10">...<a ng-href="#!/company/{{ company.Symbol }}">{{ company.Symbol }} - {{ company.Name }}</a></li>
           <!--<li ng-repeat="Symbol in vm.symbols | filter: search"> {{vm.companies.Symbols}}</li>-->
         </ul>
-
+  </div> 
 
 <div class="container" id="adSpace">
     <p> Your ad here </p>

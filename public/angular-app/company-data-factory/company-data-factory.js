@@ -4,7 +4,8 @@ function companyDataFactory($http) {
   return {
     companyList: companyList,
     companyDisplay: companyDisplay,
-    symbolDisplay: symbolDisplay
+    symbolDisplay: symbolDisplay,
+    stockHistory: stockHistory
   };
 
   function companyList() {
@@ -16,6 +17,10 @@ function companyDataFactory($http) {
   }
 
   function symbolDisplay(symbol) {
+    return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
+  }
+  
+  function stockHistory(symbol) {
     return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
   }
 

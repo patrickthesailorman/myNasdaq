@@ -9,13 +9,22 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
         companyDataFactory.symbolDisplay(symbol).then(function(res) {
             var display = res.data;
             $location.path("/company/" + display._id);
-        });
+        })
         console.log(symbol, vm.symbol);
-      
+       companyDataFactory.stockHistory(symbol).then(function(res) {
+           vm.stockHistory = [];
+           vm.stockHistory.push(res.data.symbol);
+           
+       });
     }
     vm.queriesGetAll = function() {
         console.log("query");
     }
+    vm.stockHistory = function() {
+        console.log("History");
+        
+    }
+     
 };
 
     
