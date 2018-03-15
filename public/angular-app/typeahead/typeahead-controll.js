@@ -1,14 +1,14 @@
 angular.module("angularTypeahead", ["ui.bootstrap"]);
 
 module.factory("Symbols", function(){
-    var Symbols = db.find({Symbols : "req.body"});
+    var Symbols = db.companies.find({Symbols : "req.body"});
     return Symbols;
 });
 
-module.controller("TypeaheadCtrl", function($scope, Symbol) {
+module.controller("TypeaheadCtrl", function($scope, Symbols) {
 	
 	$scope.selected = undefined;
 	
-	$scope.symbol = company.Symbol;
+	$scope.symbols = Symbols;
 	
 });

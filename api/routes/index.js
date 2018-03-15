@@ -32,7 +32,7 @@ router
   
 // Query List
 router
-  .route('/users/queries')
+  .route('/users/:queries')
   .get(ctrlQueries.queriesGetAll)
   .post(ctrlQueries.queriesAddOne);
   
