@@ -11,8 +11,8 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
             $location.path("/company/" + display._id);
         })
         console.log(symbol, vm.symbol);
-       companyDataFactory.stockHistory(symbol).then(function(res) {
-           
+       companyDataFactory.postSearch(symbol).then(function(res) {
+           console.log("This response!!!", res);
        });
     }
     vm.queriesGetAll = function() {

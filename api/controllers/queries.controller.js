@@ -52,10 +52,10 @@ module.exports.queriesGetOne = function(req, res) {
         response.status = 500;
         response.message = err;
       } else if(!user) {
-        console.log("User id not found in database", id);
+        console.log("User id not found in database", userId);
         response.status = 404;
         response.message = {
-          "message" : "User ID not found " + id
+          "message" : "User ID not found " + userId
         };
       } else {
         // Get the query
@@ -100,7 +100,7 @@ var _addQuery = function (req, res, user) {
 };
 
 module.exports.queriesAddOne = function(req, res) {
-
+console.log("queries controller queriesAddOne", req.params);
   var id = req.params.userId;
 
   console.log('POST query to userId', id);

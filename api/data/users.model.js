@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 var querySchema = new mongoose.Schema({
-  name : {
-    type : String,
-    required : true
-  },
+  // name : {
+  //   type : String,
+  //   required : true
+  // },
   symbol : {
     type : String,
     required : true

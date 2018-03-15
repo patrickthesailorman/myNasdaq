@@ -4,6 +4,7 @@ var router = express.Router();
 var ctrlCompanies = require('../controllers/companies.controllers.js'); 
 var ctrlUsers = require('../controllers/users.controllers.js');
 var ctrlQueries = require('../controllers/queries.controller.js');
+var ctrlSearch = require('../controllers/search.controller.js');
 
 // Company Routes
 router
@@ -32,8 +33,13 @@ router
   
 // Query List
 router
-  .route('/users/:queries')
+  .route('/users/queries/:symbol')
   .get(ctrlQueries.queriesGetAll)
   .post(ctrlQueries.queriesAddOne);
+  
+router
+  .route('/search/:symbol')
+  .get(ctrlSearch.getSearch)
+  .post(ctrlSearch.addSearch);
   
 module.exports = router;

@@ -5,7 +5,7 @@ function companyDataFactory($http) {
     companyList: companyList,
     companyDisplay: companyDisplay,
     symbolDisplay: symbolDisplay,
-    stockHistory: stockHistory
+    postSearch: postSearch
   };
 
   function companyList() {
@@ -20,8 +20,8 @@ function companyDataFactory($http) {
     return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
   }
  
-  function stockHistory(symbol) {
-    return $http.post('/api/users/queries/' + symbol).then(complete).catch(failed);
+  function postSearch(symbol) {
+    return $http.post('/api/search/' + symbol).then(complete).catch(failed);
   }
 
   function postUserQuery(user, symbol){

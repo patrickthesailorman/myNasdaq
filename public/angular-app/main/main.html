@@ -23,7 +23,7 @@
       <br>
   <!--<!--<div ng-controller="QueriesController as vm">   -->
       <label for="queries">Search History for Companies by Stock Symbol:</label>
-        <ul ng-model="vm.stockHistory">
+        <ul ng-model="vm.postSearch">
           <li dir-paginate="symbol in symbols | filter: symbol | itemsPerPage: 10">...<a ng-href="#!/company/{{ company.Symbol }}">{{ company.Symbol }} - {{ company.Name }}</a></li>
           <!--<li ng-repeat="Symbol in vm.symbols | filter: search"> {{vm.companies.Symbols}}</li>-->
         </ul>

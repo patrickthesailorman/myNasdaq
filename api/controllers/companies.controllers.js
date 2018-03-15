@@ -219,5 +219,5 @@ Company
       .status(response.status)
       .json(response.message);
     });
-};
+}; 
 
