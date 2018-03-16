@@ -3,18 +3,16 @@ angular.module('myNasdaq').controller('CompanyController', CompanyController);
 function CompanyController($route, $routeParams, $window, companyDataFactory, AuthFactory, jwtHelper) {
   var vm = this;
   var id = $routeParams.id;
+  var smbol = $routeParams.symbol
+  console.log("companyController ID", smbol)
   vm.isSubmitted = false;
   companyDataFactory.companyDisplay(id).then(function(response) {
     console.log(id);
     console.log(response.data);
     console.log(response);
     vm.company = response.data;
-    
-    // vm.symbol = _getSymbol(response.data.symbol);
-  });
 
-  //   return new Array(symbol);
-  // }
+  });
 
 
   vm.isLoggedIn = function() {

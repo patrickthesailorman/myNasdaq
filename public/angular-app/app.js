@@ -28,7 +28,7 @@ function config($httpProvider, $routeProvider) {
             restricted: false
         }
     })
-    .when('/company/:symbol', {
+    .when('/company/symbol/:symbol', {
         templateUrl: 'angular-app/company-display/company.html',
         controller: CompanyController,
         controllerAs: 'vm',

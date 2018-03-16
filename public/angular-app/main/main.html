@@ -24,8 +24,8 @@
   <!--<!--<div ng-controller="QueriesController as vm">   -->
       <label for="queries">Search History for Companies by Stock Symbol:</label>
         <ul>
-          <li dir-paginate="search in vm.searches | filter: search | itemsPerPage: 10"><a ng-href="#!/companies/symbol/{{ search.symbol }}">{{ search.symbol }} </a></li>
-          <!--<li ng-repeat="Symbol in vm.symbols | filter: search"> {{vm.companies.Symbols}}</li>-->
+          <!--<li dir-paginate="search in vm.searches | filter: search | itemsPerPage: 10"><a ng-href="#!/companies/symbol/{{ search.symbol }}">{{ search.symbol }} </a></li>-->
+          <li ng-repeat="search in vm.searches"><a ng-href="#!/company/symbol/{{ search.symbol }}">{{ search.symbol }} </a></li>
         </ul>
   </div> 
 

@@ -28,7 +28,7 @@ router
     .post(ctrlUsers.login);
 // Symbol search
 router
-  .route('/companies/symbol/:symbol')
+  .route('/company/symbol/:symbol')
   .get(ctrlCompanies.companiesGetOneSymbol);
   
 // Query List
