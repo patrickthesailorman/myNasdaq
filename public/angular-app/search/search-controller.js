@@ -3,6 +3,12 @@ angular.module('myNasdaq').controller('symbolSearchController', symbolSearchCont
 function symbolSearchController($http, $route, $routeParams, $location, companyDataFactory) {
     var vm = this;
     
+    companyDataFactory.getSearches().then(function(res){
+        
+          console.log("Heeeeres searches", res); 
+          vm.searches = res.data;
+    });
+    
     vm.stocksGetOne = function() {
         console.log("vm", vm);
         var symbol = vm.symbol.toUpperCase();
@@ -22,7 +28,12 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
         console.log("History");
         
     }
-     
+    vm.getSearches = function() {
+        console.log("Getting Searches");
+        companyDataFactory.getSearches().then(function(res){
+          console.log("Heeeeres searches", res); 
+        });
+    }
 };
 
     

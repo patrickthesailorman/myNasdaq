@@ -6,7 +6,14 @@ module.exports.getSearch = function(req, res) {
  .find()
  .exec(function(err, searches) {
      console.log("THESE SEARCHES...", searches);
-     console.log("ERROR!",err);
+     
+      if (err) {
+          console.log("ERROR!", err);
+          res.status(400).json(err);
+      } else {
+          console.log("Searches found");
+          res.status(201).json(searches);
+      }
  })
 };
 

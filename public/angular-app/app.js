@@ -28,6 +28,14 @@ function config($httpProvider, $routeProvider) {
             restricted: false
         }
     })
+    .when('/company/:symbol', {
+        templateUrl: 'angular-app/company-display/company.html',
+        controller: CompanyController,
+        controllerAs: 'vm',
+        access: {
+            restricted: false
+        }
+    })
     .when('/register', {
         templateUrl: 'angular-app/register/register.html',
         controller: RegisterController,

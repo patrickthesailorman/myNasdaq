@@ -38,8 +38,12 @@ router
   .post(ctrlQueries.queriesAddOne);
   
 router
+  .route('/search/')
+  .get(ctrlSearch.getSearch);  
+  
+router
   .route('/search/:symbol')
-  .get(ctrlSearch.getSearch)
+  // .get(ctrlSearch.getSearch)
   .post(ctrlSearch.addSearch);
   
 module.exports = router;
