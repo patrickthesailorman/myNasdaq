@@ -30,7 +30,7 @@ function config($httpProvider, $routeProvider) {
     })
     .when('/company/symbol/:symbol', {
         templateUrl: 'angular-app/company-display/company.html',
-        controller: CompanyController,
+        controller: CompanySymbolController,
         controllerAs: 'vm',
         access: {
             restricted: false

@@ -3,8 +3,8 @@ angular.module('myNasdaq').controller('CompanyController', CompanyController);
 function CompanyController($route, $routeParams, $window, companyDataFactory, AuthFactory, jwtHelper) {
   var vm = this;
   var id = $routeParams.id;
-  var smbol = $routeParams.symbol
-  console.log("companyController ID", smbol)
+ 
+  console.log("companyController ID", id)
   vm.isSubmitted = false;
   companyDataFactory.companyDisplay(id).then(function(response) {
     console.log(id);

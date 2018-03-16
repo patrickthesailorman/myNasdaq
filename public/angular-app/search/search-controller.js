@@ -5,7 +5,7 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
     
     companyDataFactory.getSearches().then(function(res){
         
-          console.log("Heeeeres searches", res); 
+          console.log("display searches", res); 
           vm.searches = res.data;
     });
     
@@ -25,14 +25,17 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
     vm.queriesGetAll = function() {
         console.log("query");
     }
-    vm.stockHistory = function() {
+    vm.search = function() {
         console.log("History");
+        companyDataFacotry.companySymbolDisplay().then(function(res) {
+            console.log("show me");
+        })
         
     }
     vm.getSearches = function() {
         console.log("Getting Searches");
         companyDataFactory.getSearches().then(function(res){
-          console.log("Heeeeres searches", res); 
+          console.log("show searches", res); 
         });
     }
 };

@@ -6,7 +6,8 @@ function companyDataFactory($http) {
     companyDisplay: companyDisplay,
     symbolDisplay: symbolDisplay,
     postSearch: postSearch,
-    getSearches: getSearches
+    getSearches: getSearches,
+    companySymbolDisplay: companySymbolDisplay
   };
 
   function companyList() {
@@ -18,7 +19,7 @@ function companyDataFactory($http) {
   }
 
   function companySymbolDisplay(symbol) {
-    return $http.get('/api/companies/' + symbol).then(complete).catch(failed);
+    return $http.get('/api/company/symbol/' + symbol).then(complete).catch(failed);
   }
 
   function symbolDisplay(symbol) {
