@@ -14,9 +14,7 @@
      
        <label for="symbols">Search for Company by Stock Symbol:</label>
           <input type="text" name="symbol" ng-model="vm.symbol" placeholder="Stock Symbol">
-      <!--<div ng-show="vm.stockForm.quote.$dirty && vm.stockForm.quote.$invalid && vm.isSubmitted">-->
-      <!--  <p>Stock Symbol must be capitalized.</p>-->
-      <!--  </div>-->
+
       <button type="submit" class="btn btn-success">Get Stock Quote</button>
     </form>
 </div> 
@@ -24,7 +22,7 @@
   <!--<!--<div ng-controller="QueriesController as vm">   -->
       <label for="queries">Search History for Companies by Stock Symbol:</label>
         <ul>
-          <li dir-paginate="search in vm.searches | filter: search | itemsPerPage: 5"><a ng-href="#!/company/symbol/{{ search.symbol }}">{{ search.symbol }} </a></li>
+          <li ng-model="vm.search" dir-paginate="search in vm.searches | filter: search | itemsPerPage: 5"><a ng-href="#!/company/symbol/{{ search.symbol }}">{{ search.symbol }} </a></li>
           <!--<li ng-repeat="search in vm.searches"><a ng-href="#!/api/company/symbol/{{ search.symbol }}">{{ search.symbol }} </a></li>-->
         </ul>
         <dir-pagination-controls
