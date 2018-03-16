@@ -17,6 +17,10 @@ function companyDataFactory($http) {
     return $http.get('/api/companies/' + id).then(complete).catch(failed);
   }
 
+  function companySymbolDisplay(symbol) {
+    return $http.get('/api/companies/' + symbol).then(complete).catch(failed);
+  }
+
   function symbolDisplay(symbol) {
     return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
   }

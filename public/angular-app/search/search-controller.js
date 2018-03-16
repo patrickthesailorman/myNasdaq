@@ -13,6 +13,7 @@ function symbolSearchController($http, $route, $routeParams, $location, companyD
         console.log("vm", vm);
         var symbol = vm.symbol.toUpperCase();
         companyDataFactory.symbolDisplay(symbol).then(function(res) {
+            console.log("Response", res.data);
             var display = res.data;
             $location.path("/company/" + display._id);
         })
