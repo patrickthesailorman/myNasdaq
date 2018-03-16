@@ -22,7 +22,7 @@ function companyDataFactory($http) {
   }
 
   function symbolDisplay(symbol) {
-    return $http.get('/api/companies/symbol/' + symbol).then(complete).catch(failed);
+    return $http.get('/api/company/symbol/' + symbol).then(complete).catch(failed);
   }
  
   function postSearch(symbol) {
